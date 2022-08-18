@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HeLangSharp
 {
-    public class U8Base
+    public class U8CentralFiniteCurve
     {
         public static readonly U8Start 典 = new U8Start();
         public static readonly U8Start dian = new U8Start();
@@ -37,6 +37,22 @@ namespace HeLangSharp
                 Console.Write(i == 0 ? $"{num}" : $" | {num}");
             }
             Console.WriteLine();
+        }
+
+        public static u8 CreateU8(int length)
+        {
+            if (length <= 0)
+            {
+                throw new InsufficientMemoryException();
+            }
+
+            var a = new U8Builder(0);
+            for (int i = 0; i < length - 1; i++)
+            {
+                a.Add(0);
+            }
+
+            return a.Build();
         }
     }
 

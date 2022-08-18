@@ -1,7 +1,7 @@
 using HeLangSharp;
 using System.Collections;
 using System.Text;
-using static HeLangSharp.U8Base;
+using static HeLangSharp.U8CentralFiniteCurve;
 
 namespace HeLangSharp.Tests
 {
