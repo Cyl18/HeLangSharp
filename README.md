@@ -1,11 +1,13 @@
 # HeLangSharp
-Next-Generation Cyber Programming Language from Li Tang, with C# support.
+Next-Generation Cyber Programming Language from Li Tang, with .NET support.
 
 灵感：[HeLangKotlinScriptImpl](https://github.com/shaokeyibb/HeLangKotlinScriptImpl)
 
 ## 介绍
 
-HeLangSharp 跨时代的采用了 .NET 6 作为基础，绝对不是什么 PPT 产品，完全实现了自主知识产权，并且引入了汉语编程。
+作为一名资深的大陆西方网友，HeLangSharp 跨时代的采用了 .NET 6 作为基础，绝对不是什么 PPT 产品，也绝对不是基于什么 C# 10 实现的，完全实现了自主知识产权，并且引入了汉语编程，打破了东方人的技术垄断。
+
+## 愿景
 
 新时代来临，我们的HeLangSharp实现了历史性跨越式发展，形势得到切实巩固和提高，作用得到深刻变化；差距发展步伐加快；规律又快又好发展。目前我们已坚持传统，通达政策，帮助管理，了解矛盾。但是我们也要清醒地认识到，格局的发展仍不能满足广大人民群众对于HeLangSharp的强烈需求，还不能适应构建和谐社会的迫切需要。HeLangSharp发展不平衡的问题突出，实施速度尚未取得根本性突破，总体布局改革需要深化，结合点需要提高，基层尚未得到很好解决。
 
@@ -58,6 +60,16 @@ a++;
 Print(a); // 2 | 3 | 4 | 5 | 6
 ```
 
+### 其它语法
+
+以 u8 作为下标也是支持的：
+
+```csharp
+u8 a = dian | 1 | 2 | 3 | 4 | 5 | le;
+a[dian | 1 | 3 | le] = 0;
+
+```
+
 ### 高性能
 
 新期待，新时代，新使命，新方位，新水平;
@@ -77,7 +89,7 @@ a[0] = 1; // 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
 
 ## 单元测试
 
-我们达到了惊人的 100%™ 单元测试覆盖率。你也可以在[这里](https://github.com/Cyl18/HeLangSharp/blob/master/HeLangSharp.Tests/UnitTest1.cs)查看测试样例。
+惊人的 100%™ 单元测试覆盖率。你也可以在[这里](https://github.com/Cyl18/HeLangSharp/blob/master/HeLangSharp.Tests/UnitTest1.cs)查看测试样例。
 
 ## 开源协议
 
