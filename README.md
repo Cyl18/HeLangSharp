@@ -91,6 +91,11 @@ a[0] = 1; // 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
 
 惊人的 100%™ 单元测试覆盖率。你也可以在[这里](https://github.com/Cyl18/HeLangSharp/blob/master/HeLangSharp.Tests/UnitTest1.cs)查看测试样例。
 
+## Credits
+
+- Cyl18 项目发起
+- TheRealKamisama 5G支持 文档修改
+
 ## 开源协议
 
 [Anti 996 License Version 1.0](https://github.com/kattgu7/Anti-996-License)
