@@ -1,7 +1,8 @@
 ﻿using System.Collections.Immutable;
+using System.Diagnostics;
+using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
-
 namespace HeLangSharp
 {
     public class U8CentralFiniteCurve
@@ -13,10 +14,39 @@ namespace HeLangSharp
 
         public static void Test5G()
         {
-            // https://github.com/shaokeyibb/HeLangKotlinScriptImpl/blob/bc4a379e90bfbcb5f5fa619a5d1cd5137e7ac764/src/main/kotlin/io/hikarilan/helangkotlinscriptimpl/SpeedTester.kt
-            // https://github.com/kifuan/helang/blob/219c3f5da2031154749996d322780941b5d5558b/helang/speed_tester.py
+            var rnd = new Random();
+            var songs = new[]
+            {
+                "Zood", "“Libera me” from hell" /*私货*/, "Rap God", "Like That", "Out On My Own", "Breathe Again",
+                "I Know What I Want", "We Do It Right",
+                "Dissolve II", "Meridian", "Flirting With June", "Behind The Sun", "Eat Them Apples", "Purusha",
+                "Brazooka", "Lenguas", "Loyal", "L.O.V.E. (Instrumental)",
+                "Robot Rock (Edit)",
+                "Young Dumb & Broke (Originally Performed by Khalid) [Instrumental Karaoke Version]",
+                "Finish Line/Drown"
+            };
+            var suffixes = new[]
+            {
+                ".flac", ".ogg", ".mp3", ".m4a"
+            };
+            var player = new SoundPlayer("Eminem - Rap God.wav");
+            player.Play();
+            Console.WriteLine("Cyber DJ is downloading musics via 5G...");
+            var s = new Stopwatch();
+            s.Start();
+            while (s.Elapsed < TimeSpan.FromSeconds(17))
+            {
+                var r1 = rnd.Next(songs.Length);
+                var r2 = rnd.Next(suffixes.Length);
+                Console.Write($"Downloading {songs[r1]}{suffixes[r2]}...");
+                using var progress = new ProgressBar();
+                for (int i = 0; i <= 100; i+=1) {
+                    progress.Report((double) i / 100);
+                    Thread.Sleep(1);
+                }
+                Console.WriteLine("Done.");
+            }
 
-            throw new NotImplementedException();
         }
 
         public static void SPrint(u8 a)

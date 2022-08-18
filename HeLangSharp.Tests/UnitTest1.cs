@@ -81,6 +81,12 @@ namespace HeLangSharp.Tests
         }
 
         [TestMethod]
+        public void Download5G()
+        {
+            Test5G();
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(InsufficientMemoryException))]
         public void TestErrorCreate()
         {
