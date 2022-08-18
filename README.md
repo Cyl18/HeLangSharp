@@ -15,9 +15,11 @@ HeLangSharp 跨时代的采用了 .NET 6 作为基础，绝对不是什么 PPT �
 
 1. 拉取源代码
 
-> git clone git@github.com:Cyl18/HeLangSharp.git
+```shell
+> git clone https://github.com/Cyl18/HeLangSharp.git
+```
 
-2. 在 Visual Studio 中引用项目
+2. 新建一个项目，并在 Visual Studio 中引用项目
 
 3. 在代码中加上一行
 
@@ -73,6 +75,10 @@ a[0] = 1; // 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1
 
 // TODO
 
-### 开源协议
+## 单元测试
+
+我们达到了惊人的 100%™ 单元测试覆盖率。你也可以在[这里](https://github.com/Cyl18/HeLangSharp/blob/master/HeLangSharp.Tests/UnitTest1.cs)查看测试样例。
+
+## 开源协议
 
 [Anti 996 License Version 1.0](https://github.com/kattgu7/Anti-996-License)
