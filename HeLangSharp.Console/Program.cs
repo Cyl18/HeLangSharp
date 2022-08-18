@@ -1,2 +1,2 @@
-﻿using static HeLangSharp.U8Base;
+﻿using static HeLangSharp.U8CentralFiniteCurve;
 Test5G();

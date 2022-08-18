@@ -42,7 +42,7 @@ namespace HeLangSharp
                 using var progress = new ProgressBar();
                 for (int i = 0; i <= 100; i+=1) {
                     progress.Report((double) i / 100);
-                    Thread.Sleep(1);
+                    Thread.SpinWait(1);
                 }
                 Console.WriteLine("Done.");
             }
