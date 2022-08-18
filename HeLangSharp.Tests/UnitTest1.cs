@@ -70,5 +70,21 @@ namespace HeLangSharp.Tests
             
             CollectionAssert.AreEqual(a.nums.ToArray(), Enumerable.Repeat((nint)1, 10).ToArray());
         }
+
+        [TestMethod]
+        public void TestCreateU8()
+        {
+            u8 a = CreateU8(10);
+            a[0] = 1;
+
+            CollectionAssert.AreEqual(a.nums.ToArray(), Enumerable.Repeat((nint)1, 10).ToArray());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InsufficientMemoryException))]
+        public void TestErrorCreate()
+        {
+            CreateU8(-1);
+        }
     }
 }
