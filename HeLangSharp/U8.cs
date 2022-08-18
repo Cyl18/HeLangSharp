@@ -38,11 +38,12 @@ namespace HeLangSharp
             {
                 var r1 = rnd.Next(songs.Length);
                 var r2 = rnd.Next(suffixes.Length);
-                Console.Write($"Downloading {songs[r1]}{suffixes[r2]}...");
+                var mb = rnd.Next(10, 30);
+                Console.Write($"Downloading {songs[r1]}{suffixes[r2]} ({mb}MiB)...");
                 using var progress = new ProgressBar();
-                for (int i = 0; i <= 100; i+=1) {
+                for (int i = 0; i <= 100; i+=10) {
                     progress.Report((double) i / 100);
-                    Thread.SpinWait(1);
+                    Thread.SpinWait(500000);
                 }
                 Console.WriteLine("Done.");
             }
