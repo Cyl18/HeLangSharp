@@ -74,7 +74,7 @@ namespace HeLangSharp
         {
             if (length <= 0)
             {
-                throw new InsufficientMemoryException();
+                throw new InsufficientMemoryException("内存不够了，star一下repo，抽一个air pro");
             }
 
             var a = new U8Builder(0);
