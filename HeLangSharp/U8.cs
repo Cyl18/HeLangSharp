@@ -144,7 +144,7 @@ namespace HeLangSharp
 
         public U8Builder(nint startNum) { Nums.Add(startNum); }
 
-        public void Add(nint num){ Nums.Add(num); }
+        public void Add(nint num) => Nums.Add(num);
 
         public u8 Build() => new(CollectionsMarshal.AsSpan(Nums));
 
