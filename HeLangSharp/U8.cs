@@ -7,10 +7,10 @@ namespace HeLangSharp
 {
     public class U8CentralFiniteCurve
     {
-        public static readonly U8Start 典 = new U8Start();
-        public static readonly U8Start dian = new U8Start();
-        public static readonly U8End 乐 = new U8End();
-        public static readonly U8End le = new U8End();
+        public static readonly U8Start 典 = new();
+        public static readonly U8Start dian = new();
+        public static readonly U8End 乐 = new();
+        public static readonly U8End le = new();
 
         public static void Test5G()
         {
@@ -55,7 +55,7 @@ namespace HeLangSharp
             for (int i = 0; i < a.nums.Length; i++)
             {
                 var num = a.nums[i];
-                Console.Write((char) num);
+                Console.Write((char)num);
             }
             Console.WriteLine();
         }
@@ -91,10 +91,7 @@ namespace HeLangSharp
     {
         public Span<nint> nums { get; set; }
 
-        internal u8(Span<nint> nums)
-        {
-            this.nums = nums;
-        }
+        internal u8(Span<nint> nums) => this.nums = nums;
 
         public static u8 operator ++(u8 a)
         {
@@ -106,10 +103,7 @@ namespace HeLangSharp
             return a;
         }
 
-        public static implicit operator u8(Span<nint> a)
-        {
-            return new u8(a);
-        }
+        public static implicit operator u8(Span<nint> a) => new(a);
 
         public nint this[u8 u]
         {
@@ -124,10 +118,7 @@ namespace HeLangSharp
 
         public nint this[nint v]
         {
-            get
-            {
-                return nums[(int) v - 1];
-            }
+            get => nums[(int)v - 1];
             set
             {
                 if (v == 0)
@@ -137,52 +128,27 @@ namespace HeLangSharp
                         nums[i] = value;
                     }
                 }
-                else
-                {
-                    nums[(int)v - 1] = value;
-                }
+                else nums[(int)v - 1] = value;
             }
         }
 
     }
 
-    public struct U8Start
-    {
-        public static U8Builder operator |(U8Start b, nint i)
-        {
-            return new U8Builder(i);
-        }
-    }
+    public struct U8Start { public static U8Builder operator |(U8Start _, nint i) => new(i); }
 
-    public struct U8End
-    {
-
-    }
+    public struct U8End { }
 
     public class U8Builder
     {
-        List<nint> Nums = new();
+        private readonly List<nint> Nums = new();
 
-        public U8Builder(nint startNum)
-        {
-            Nums.Add(startNum);
-        }
+        public U8Builder(nint startNum) { Nums.Add(startNum); }
 
-        public void Add(nint num)
-        {
-            Nums.Add(num);
-        }
+        public void Add(nint num) => Nums.Add(num);
 
-        public u8 Build()
-        { 
-            //u8 a = stackalloc int[10];
-            return new u8(CollectionsMarshal.AsSpan(Nums));
-        }
+        public u8 Build() => new(CollectionsMarshal.AsSpan(Nums));
 
-        public static u8 operator |(U8Builder b, U8End e)
-        {
-            return b.Build();
-        }
+        public static u8 operator |(U8Builder b, U8End _) => b.Build();
 
         public static U8Builder operator |(U8Builder b, nint i)
         {
